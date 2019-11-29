@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wio-mock
+  labels:
+    app: wio-mock
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: wio-mock
+      labels:
+        app: wio-mock
+    spec:
+      containers:
+        - name: wio-mock
+          image: dukeman/wio-mock:0.1.0
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PORT
+              value: "8080"
+          ports:
+            - containerPort: 8080
+              name: http
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: wio-mock
