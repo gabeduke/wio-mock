@@ -18,5 +18,5 @@ COPY --from=build /app/wio wio
 
 # executable layer
 ENV PORT 8080
-EXPOSE 8080
+EXPOSE $PORT
 ENTRYPOINT ["./wio"]
