@@ -27,6 +27,11 @@ docker-run: ## Run docker image
 docker-push: ## Push docker image to remote registry
 	docker push $(REGISTRY)/$(IMAGE):$(TAG)
 
+##@ Kubernetes
+
+deploy: ## Deploy to kubernetes
+	kubectl kustomize deploy | kubectl apply -f -
+
 ##@ Helpers
 .PHONY: help
 

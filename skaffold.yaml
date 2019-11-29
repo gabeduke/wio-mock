@@ -1,0 +1,12 @@
+apiVersion: skaffold/v1
+kind: Config
+metadata:
+  name: wio-mock
+build:
+  artifacts:
+  - image: dukeman/wio-mock
+deploy:
+  kubectl:
+    manifests:
+    - deploy/deployment.yaml
+    - deploy/service.yaml

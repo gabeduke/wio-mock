@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: wio-mock
-          image: dukeman/wio-mock:0.1.0
+          image: dukeman/wio-mock:latest
           imagePullPolicy: IfNotPresent
           env:
             - name: PORT
