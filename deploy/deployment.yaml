@@ -12,6 +12,8 @@ spec:
       labels:
         app: wio-mock
     spec:
+      nodeSelector:
+        kubernetes.io/arch: amd64
       containers:
         - name: wio-mock
           image: dukeman/wio-mock:latest
